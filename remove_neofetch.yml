@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repository
+    dnf:
+      update_cache: yes
+
+  - name: install neofetch
+    dnf:
+      name: neofetch-7.1.0-7.el9.noarch
+      state: absent
+
