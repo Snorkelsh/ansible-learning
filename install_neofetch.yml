@@ -4,11 +4,28 @@
   become: true
   tasks:
 
-  - name: update repository
-    dnf:
+
+  - name: "Update all"
+    package:
+      update_only: yes
       update_cache: yes
 
-  - name: install neofetch
-    dnf:
-      name: neofetch-7.1.0-7.el9.noarch
+- hosts: virt1
+  become: true
+  tasks:
 
+  - name: "install neofetch on virt1"
+    package:
+      name: 
+        - neofetch
+      state: latest
+
+- hosts: virt2
+  become: true
+  tasks:
+
+  - name: "install cowsay on virt2"
+    package:
+      name:
+        - cowsay
+      state: latest
