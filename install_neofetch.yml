@@ -6,6 +6,7 @@
 
 
   - name: "Update all"
+    tags: always
     package:
       update_only: yes
       update_cache: yes
@@ -15,6 +16,7 @@
   tasks:
 
   - name: "install neofetch on virt1"
+    tags: virt1,neofetch
     package:
       name: 
         - neofetch
@@ -25,6 +27,7 @@
   tasks:
 
   - name: "install cowsay on virt2"
+    tags: virt2,cowsay
     package:
       name:
         - cowsay
